@@ -63,7 +63,7 @@ img:not([alt]) {
 
 @font-face {
   font-family: 'jedi';
-  src: url("./fonts/Starjedi.ttf") format("truetype");
+  src: url("/janken_ogawa_08/fonts/Starjedi.ttf") format("truetype");
 }
 
 html {
