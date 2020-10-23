@@ -1,9 +1,49 @@
 
 .first-view-nav {
   padding: 40px 0;
-
 }
 
 .player-select {
-  
+  &__heading {
+    padding: 24px 0;
+  }
+  &__selected-picture {
+    margin-bottom: 24px;
+  }
+  .player-list {
+    margin: 0 auto 24px;
+    display: flex;
+  }
+  &__btns {
+    a {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.janken {
+  &__heading {
+    padding: 24px 0;
+  }
+  &__text {
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 8px;
+  }
+  &__myself {
+    position: relative;
+    margin-bottom: 16px;
+    a {
+      width: 80%;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__btns {
+    a {
+      margin-bottom: 20px;
+    }
+  }
 }

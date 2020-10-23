@@ -46,41 +46,21 @@
     </nav>
   </header>
   <main>
-    <section class="star-wars-intro">
-      <!-- 最初に表示される青字テキスト -->
-      <p class="intro-text">
-        それはつい最近
-        <br>
-        遥か彼方の JavaScriptの沼...
-      </p>
-      <!-- 続いて表示される画像かテキスト -->
-      <h2 class="main-logo">
-        @
-      </h2>
-      <!-- スクロール表示されるコンテンツ -->
-      <div class="main-content">
-        <div class="title-content">
-          <p class="content-header">
-            JavaScriptで
-            <br/>
-            じゃんけんアプリ
-          </p>
-          <br>
-          <p class="content-body">
-            みなさん、スター・ウォーズに登場する「ライトセーバー」をご存知でしょうか？ライトセーバーとは、主人公やダーズベイダーが武器として使用する光る剣のことです。そのライトセーバーには、闘う型(フォーム)があります。そして、それぞれのフォームに相性があり、映画の中でもその相性を反映した場面があります。今回はそんなライトセーバーの型を題材にしたじゃんけんアプリです。
-          </p>
-          <a href="https://github.com/gawgaw-2020" class="space-button">コードの詳細は<br>GitHubにて!!</a>
+    <section class="player-select">
+      <div class="section-inner">
+        <h1 class="player-select__heading heading heading--level1">player select</h1>
+        <p class="player-select__selected-picture"><img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt=""></p>
+        <ul class="player-select__player-list player-list">
+          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_dooku@2x.jpg" alt=""></li>
+          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
+          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_obi@2x.jpg" alt=""></li>
+        </ul>
+        <div class="player-select__btns">
+          <a href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side">ok</a>
+          <a href="/janken_ogawa_08/" class="btn btn--light-side">home</a>
         </div>
       </div>
     </section>
-    <section class="first-view-nav">
-      <div class="section-inner">
-        <a href="/janken_ogawa_08/player-select/" class="btn btn--light-side">start</a>
-      </div>
-    </section>
-
-
-
 
 
 
@@ -114,6 +94,12 @@
         <button class="btn btn--droid btn--round mb40">droid</button>
         </div>
   </main>
+
+
+
+
+
+
 <!-- inview.js -->
 <script type="text/javascript" src="/janken_ogawa_08/js/inview.js"></script>
 <!-- parallax.js -->

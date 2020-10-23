@@ -702,11 +702,11 @@ Version: 1.0
 }
 
 .heading--level1 {
-  font-size: 3.2rem;
+  font-size: 2.4rem;
 }
 
 .heading--level2 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 
 .heading--level3 {
@@ -1115,5 +1115,52 @@ nav ul li.yellow:hover {
 
 .first-view-nav {
   padding: 40px 0;
+}
+
+.player-select__heading {
+  padding: 24px 0;
+}
+
+.player-select__selected-picture {
+  margin-bottom: 24px;
+}
+
+.player-select .player-list {
+  margin: 0 auto 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player-select__btns a {
+  margin-bottom: 20px;
+}
+
+.janken__heading {
+  padding: 24px 0;
+}
+
+.janken__text {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 8px;
+}
+
+.janken__myself {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.janken__myself a {
+  width: 80%;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.janken__btns a {
+  margin-bottom: 20px;
 }
 /*# sourceMappingURL=style.css.map */
