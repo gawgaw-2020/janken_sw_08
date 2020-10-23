@@ -109,8 +109,9 @@
 
     // バトルボタンをクリックした時の処理
     $('#battle').on('click', () => {
-      // 画像を回す処理の停止
+      // 画像を回す処理の停止とホバーの無効化
       clearInterval(intervalID);
+      $('#js-janken__enemy').css('pointer-events', 'none');
       // ボタンの変更
       $('#battle').css('visibility' , 'hidden');
       $('#more').css('visibility' , 'visible');
@@ -175,20 +176,15 @@
         }
       }
 
-
-
-
-
-
-
-
-
-
-
-
     });
 
+    // moreボタンを押した時の処理
+    $('#more').on('click', () => {
 
+      // ページリロードさせる
+      location.reload();
+
+    });
 
   </script>
 
