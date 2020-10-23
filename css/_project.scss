@@ -26,6 +26,10 @@
   &__heading {
     padding: 24px 0;
   }
+  &__enemy {
+    overflow: hidden;
+    height: 180px;
+  }
   &__text {
     font-size: 1.6rem;
     text-align: center;
@@ -34,12 +38,13 @@
   &__myself {
     position: relative;
     margin-bottom: 16px;
-    a {
+    button {
       width: 80%;
       position: absolute;
       bottom: 5%;
       left: 50%;
       transform: translateX(-50%);
+      outline: 0;
     }
   }
   &__btns {

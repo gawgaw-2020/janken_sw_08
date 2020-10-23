@@ -1143,6 +1143,11 @@ nav ul li.yellow:hover {
   padding: 24px 0;
 }
 
+.janken__enemy {
+  overflow: hidden;
+  height: 180px;
+}
+
 .janken__text {
   font-size: 1.6rem;
   text-align: center;
@@ -1154,13 +1159,14 @@ nav ul li.yellow:hover {
   margin-bottom: 16px;
 }
 
-.janken__myself a {
+.janken__myself button {
   width: 80%;
   position: absolute;
   bottom: 5%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  outline: 0;
 }
 
 .janken__btns a {

@@ -6,10 +6,12 @@
         <p id="js-janken__enemy" class="janken__enemy"><img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt=""></p>
         <p class="janken__text text">Lorem ipsum dolor sit amet.</p>
         <div  class="janken__myself">
-          <p id="js-janken__myself">
-            <img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">
-          </p>
-            <a href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side btn--round">battle!!</a>
+          <div class="wrapper">
+            <p id="js-janken__myself">
+              <img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">
+            </p>
+          </div>
+          <button id="battle" href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side btn--round">battle!!</button>
         </div>
         <div class="janken__btns">
           <a href="/janken_ogawa_08/player-select/" class="btn btn--light-side">player select</a>
@@ -56,15 +58,39 @@
     const storage = localStorage;
     console.log(storage.selected);
 
-    // 敵の画像をループで回す
+
+    // タイマーIDのグローバル宣言
+    let intervalID;
+    // ループカウントの初期化
     let imageCounter = 1;
-    setInterval(() => {
-      $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_${imageCounter}@2x.jpg" alt="">`);
-      imageCounter++;
-      if (imageCounter >= 4) {
-        imageCounter = 1;
+
+    // 敵の画像をループで回す処理
+    function startInterval() {
+      intervalID = setInterval(() => {
+        $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_${imageCounter}@2x.jpg" alt="">`);
+        imageCounter++;
+        if (imageCounter > 34) {
+          imageCounter = 1;
+        }
+      }, 200);
+    }
+
+
+    // 敵画像ホバー時に、回す処理を止める
+    $('#js-janken__enemy').hover(() => {
+      clearInterval(intervalID);
+    },
+      () => {
+        startInterval();
       }
-    }, 100);
+    );
+
+    // ページ読み込み時に敵の画像ループを開始
+    $(window).on('load', function (){
+      startInterval();
+    });
+
+    // ストレージに入れていたデータで自分の画像を差し替え
 
     const selectedCharacter = storage.selected
     if (selectedCharacter === 'dooku') {
@@ -76,6 +102,14 @@
     if (selectedCharacter === 'obi') {
       $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">');
     }
+
+    // バトルボタンをクリックした時の処理
+    $('#battle').on('click', () => {
+      clearInterval(intervalID);
+      $('#battle').html('one more');
+    });
+
+
 
   </script>
 
