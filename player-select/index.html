@@ -4,11 +4,11 @@
     <section class="player-select">
       <div class="section-inner">
         <h1 class="player-select__heading heading heading--level1">player select</h1>
-        <p class="player-select__selected-picture"><img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt=""></p>
+        <p id="selected-picture" class="player-select__selected-picture"><img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt=""></p>
         <ul class="player-select__player-list player-list">
-          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_dooku@2x.jpg" alt=""></li>
-          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
-          <li class="player-list__character"><img src="/janken_ogawa_08/image/player-select_obi@2x.jpg" alt=""></li>
+          <li id="dooku" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_dooku@2x.jpg" alt=""></li>
+          <li id="anakin" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
+          <li id="obi" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_obi@2x.jpg" alt=""></li>
         </ul>
         <div class="player-select__btns">
           <a href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side">ok</a>
@@ -49,5 +49,30 @@
         <button class="btn btn--droid btn--round mb40">droid</button>
         </div>
   </main>
+
+  <script>
+    //ストレージの定義
+    const storage = localStorage;
+
+    // ストレージの初期化&ストレージに保存&画像の差し替え
+    function characterChange(name) {
+      storage.removeItem('selected');
+      storage.setItem('selected', name);
+      $('#selected-picture').html(`<img src="/janken_ogawa_08/image/player-select_${name}_selected@2x.jpg" alt="">`);
+    }
+
+    // アイコンをクリックしたら上記の関数を実行
+    $('#dooku').on('click', () => {
+      characterChange('dooku');
+    });
+    $('#anakin').on('click', () => {
+      characterChange('anakin');
+    });
+    $('#obi').on('click', () => {
+      characterChange('obi');
+    });
+
+
+  </script>
 
   <?php include(dirname(__FILE__).'/../_inc/_footer.html'); ?>

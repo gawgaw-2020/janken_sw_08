@@ -3,12 +3,14 @@
     <section class="janken">
       <div class="section-inner">
         <h1 class="janken__heading heading heading--level1">your opponent is ...</h1>
-        <p class="janken__enemy"><img src="/janken_ogawa_08/image/random-select_dooku@2x.jpg" alt=""></p>
+        <p id="js-janken__enemy" class="janken__enemy"><img src="/janken_ogawa_08/image/random-select_dooku@2x.jpg" alt=""></p>
         <p class="janken__text text">Lorem ipsum dolor sit amet.</p>
-        <p class="janken__myself">
-          <img src="/janken_ogawa_08/image/random-select_anakin@2x.jpg" alt="">
-          <a href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side btn--round">battle!!</a>
-        </p>
+        <div  class="janken__myself">
+          <p id="js-janken__myself">
+            <img src="/janken_ogawa_08/image/random-select_anakin@2x.jpg" alt="">
+          </p>
+            <a href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side btn--round">battle!!</a>
+        </div>
         <div class="janken__btns">
           <a href="/janken_ogawa_08/player-select/" class="btn btn--light-side">player select</a>
           <a href="/janken_ogawa_08/" class="btn btn--light-side">home</a>
@@ -48,5 +50,24 @@
         <button class="btn btn--droid btn--round mb40">droid</button>
         </div>
   </main>
+
+  <script>
+    //ストレージの定義
+    const storage = localStorage;
+    console.log(storage.selected);
+
+    const selectedCharacter = storage.selected
+    if (selectedCharacter === 'dooku') {
+      $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/random-select_dooku@2x.jpg" alt="">');
+    }
+    if (selectedCharacter === 'anakin') {
+      $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/random-select_anakin@2x.jpg" alt="">');
+    }
+    if (selectedCharacter === 'obi') {
+      $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/random-select_obi@2x.jpg" alt="">');
+    }
+
+  </script>
+
 
   <?php include(dirname(__FILE__).'/../../_inc/_footer.html'); ?>
