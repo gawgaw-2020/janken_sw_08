@@ -4,14 +4,15 @@
       <div class="section-inner">
         <h1 class="janken__heading heading heading--level1">your opponent is ...</h1>
         <p id="js-janken__enemy" class="janken__enemy"><img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt=""></p>
-        <p class="janken__text text">Lorem ipsum dolor sit amet.</p>
+        <p id="result" class="janken__text text">Lorem ipsum dolor sit amet.</p>
         <div  class="janken__myself">
           <div class="wrapper">
             <p id="js-janken__myself">
               <img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">
             </p>
           </div>
-          <button id="battle" href="/janken_ogawa_08/player-select/janken/" class="btn btn--light-side btn--round">battle!!</button>
+          <button id="battle" class="battle btn btn--light-side btn--round">battle!!</button>
+          <button id="more" class="more btn btn--light-side btn--round">more</button>
         </div>
         <div class="janken__btns">
           <a href="/janken_ogawa_08/player-select/" class="btn btn--light-side">player select</a>
@@ -54,15 +55,17 @@
   </main>
 
   <script>
+    // -------------------- 宣言・初期化 --------------------
     //ストレージの定義
     const storage = localStorage;
     console.log(storage.selected);
-
 
     // タイマーIDのグローバル宣言
     let intervalID;
     // ループカウントの初期化
     let imageCounter = 1;
+
+    // -------------------- 関数にしたもの --------------------
 
     // 敵の画像をループで回す処理
     function startInterval() {
@@ -77,7 +80,8 @@
 
 
     // 敵画像ホバー時に、回す処理を止める
-    $('#js-janken__enemy').hover(() => {
+    $('#js-janken__enemy').hover(
+      () => {
       clearInterval(intervalID);
     },
       () => {
@@ -105,8 +109,83 @@
 
     // バトルボタンをクリックした時の処理
     $('#battle').on('click', () => {
+      // 画像を回す処理の停止
       clearInterval(intervalID);
-      $('#battle').html('one more');
+      // ボタンの変更
+      $('#battle').css('visibility' , 'hidden');
+      $('#more').css('visibility' , 'visible');
+
+      // ランダムの数値を生成
+      const randomNumber = Math.floor(Math.random() * 3);
+
+      // アナキンを選んでいた時の処理
+      if (selectedCharacter === 'anakin') {
+        if (randomNumber === 0) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
+        }
+        if (randomNumber === 1) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
+          $('#result').html('draw').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+        }
+        if (randomNumber === 2) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
+        }
+      }
+
+      // ドゥークーを選んでいた時の処理
+      if (selectedCharacter === 'dooku') {
+        if (randomNumber === 0) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
+          $('#result').html('draw').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+        }
+        if (randomNumber === 1) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
+        }
+        if (randomNumber === 2) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
+        }
+      }
+
+      // オビワンを選んでいた時の処理
+      if (selectedCharacter === 'obi') {
+        if (randomNumber === 0) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
+        }
+        if (randomNumber === 1) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
+        }
+        if (randomNumber === 2) {
+          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
+          $('#result').html('draw').addClass('text--jedi');
+          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
     });
 
 

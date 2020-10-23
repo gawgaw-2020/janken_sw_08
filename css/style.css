@@ -718,6 +718,10 @@ Version: 1.0
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
 }
 
+.text--jedi {
+  font-family: 'jedi';
+}
+
 .btn {
   display: inline-block;
   text-align: center;
@@ -1167,6 +1171,10 @@ nav ul li.yellow:hover {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   outline: 0;
+}
+
+.janken__myself .more {
+  visibility: hidden;
 }
 
 .janken__btns a {

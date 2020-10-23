@@ -28,6 +28,9 @@
 .text {
   font-size: 1.6rem;
   text-shadow: 0 0 4px rgba(255,255,255,.8);
+  &--jedi {
+    font-family: 'jedi';
+  }
 }
 
 // button
