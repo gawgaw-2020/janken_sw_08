@@ -54,10 +54,13 @@
     //ストレージの定義
     const storage = localStorage;
 
-    // ストレージの初期化&ストレージに保存&画像の差し替え
+    // キャラクターを選んだ時の処理
     function characterChange(name) {
+      // ストレージを初期化（削除）
       storage.removeItem('selected');
+      // ストレージに値を保存
       storage.setItem('selected', name);
+      // 画像を差し替え
       $('#selected-picture').html(`<img src="/janken_ogawa_08/image/player-select_${name}_selected@2x.jpg" alt="">`);
     }
 
