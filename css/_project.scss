@@ -8,7 +8,47 @@
     padding: 24px 0;
   }
   &__selected-picture {
-    margin-bottom: 24px;
+    max-width: 300px;
+    margin: 0 auto 24px;
+    position: relative;
+    #lightsaber-dooku {
+      visibility: hidden;
+      position: absolute;
+      top: 60%;
+      left: 72%;
+      transform: rotate(18deg);
+      label {
+        opacity: 0;
+      }
+      .switch {
+        opacity: 0;
+      }
+    }
+    #lightsaber-anakin {
+      visibility: hidden;
+      position: absolute;
+      top: 81%;
+      left: 22%;
+      label {
+        opacity: 0;
+      }
+      .switch {
+        opacity: 0;
+      }
+    }
+    #lightsaber-obi {
+      visibility: hidden;
+      position: absolute;
+      top: 56%;
+      left: 46%;
+      transform: rotate(-128deg);
+      label {
+        opacity: 0;
+      }
+      .switch {
+        opacity: 0;
+      }
+    }
   }
   .player-list {
     margin: 0 auto 24px;
@@ -31,7 +71,6 @@
     height: 180px;
   }
   &__text {
-    font-size: 1.6rem;
     text-align: center;
     padding: 8px;
   }

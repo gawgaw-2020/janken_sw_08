@@ -720,6 +720,7 @@ Version: 1.0
 
 .text--jedi {
   font-family: 'jedi';
+  font-size: 2.4rem;
 }
 
 .btn {
@@ -1126,7 +1127,58 @@ nav ul li.yellow:hover {
 }
 
 .player-select__selected-picture {
-  margin-bottom: 24px;
+  max-width: 300px;
+  margin: 0 auto 24px;
+  position: relative;
+}
+
+.player-select__selected-picture #lightsaber-dooku {
+  visibility: hidden;
+  position: absolute;
+  top: 60%;
+  left: 72%;
+  -webkit-transform: rotate(18deg);
+          transform: rotate(18deg);
+}
+
+.player-select__selected-picture #lightsaber-dooku label {
+  opacity: 0;
+}
+
+.player-select__selected-picture #lightsaber-dooku .switch {
+  opacity: 0;
+}
+
+.player-select__selected-picture #lightsaber-anakin {
+  visibility: hidden;
+  position: absolute;
+  top: 81%;
+  left: 22%;
+}
+
+.player-select__selected-picture #lightsaber-anakin label {
+  opacity: 0;
+}
+
+.player-select__selected-picture #lightsaber-anakin .switch {
+  opacity: 0;
+}
+
+.player-select__selected-picture #lightsaber-obi {
+  visibility: hidden;
+  position: absolute;
+  top: 56%;
+  left: 46%;
+  -webkit-transform: rotate(-128deg);
+          transform: rotate(-128deg);
+}
+
+.player-select__selected-picture #lightsaber-obi label {
+  opacity: 0;
+}
+
+.player-select__selected-picture #lightsaber-obi .switch {
+  opacity: 0;
 }
 
 .player-select .player-list {
@@ -1153,7 +1205,6 @@ nav ul li.yellow:hover {
 }
 
 .janken__text {
-  font-size: 1.6rem;
   text-align: center;
   padding: 8px;
 }

@@ -4,7 +4,27 @@
     <section class="player-select">
       <div class="section-inner">
         <h1 class="player-select__heading heading heading--level1">player select</h1>
-        <p id="selected-picture" class="player-select__selected-picture"><img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt="" width="329" height="394"></p>
+        <div id="selected-picture" class="player-select__selected-picture">
+          <img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt="" width="329" height="394">
+          <div id="lightsaber-dooku" class="lightsaber">
+            <label for="vader-example"></label>
+            <input type="checkbox" id="vader-example">
+            <div class="switch"></div>
+            <div class="plasma vader"></div>
+          </div>
+          <div id="lightsaber-anakin" class="lightsaber">
+            <label for="obi-wan-example"></label>
+            <input type="checkbox" id="obi-wan-example">
+            <div class="switch"></div>
+            <div class="plasma obi-wan"></div>
+          </div>
+          <div id="lightsaber-obi" class="lightsaber">
+            <label for="obi-wan-example"></label>
+            <input type="checkbox" id="obi-wan-example">
+            <div class="switch"></div>
+            <div class="plasma obi-wan"></div>
+          </div>
+        </div>
         <ul class="player-select__player-list player-list">
           <li id="dooku" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_dooku@2x.jpg" alt=""></li>
           <li id="anakin" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
@@ -61,18 +81,79 @@
       // ストレージに値を保存
       storage.setItem('selected', name);
       // 画像を差し替え
-      $('#selected-picture').html(`<img src="/janken_ogawa_08/image/player-select_${name}_selected@2x.jpg" alt="">`);
+      $('#selected-picture img').attr('src', `/janken_ogawa_08/image/player-select_${name}_selected@2x.jpg`);
     }
 
     // アイコンをクリックしたら上記の関数を実行
     $('#dooku').on('click', () => {
+      $('#dooku').css('pointer-events', 'none');
+      $('#anakin').css('pointer-events', 'auto');
+      $('#obi').css('pointer-events', 'auto');
+
+      $('#lightsaber-anakin input').prop('checked', false);
+      $('#lightsaber-obi input').prop('checked', false);
+
       characterChange('dooku');
+      $('#lightsaber-dooku').css('visibility', 'visible');
+      $('#lightsaber-anakin').css('visibility', 'hidden');
+      $('#lightsaber-obi').css('visibility', 'hidden');
+      // もしチェックが入っていたら
+      if ($('#lightsaber-dooku input').prop('checked')) {
+        // チェックを外す
+        $('#lightsaber-dooku input').prop('checked', false);
+
+      // もしチェックが外れていたら
+      } else {
+        // チェックを入れる
+        $('#lightsaber-dooku input').prop('checked', true);
+      }
     });
     $('#anakin').on('click', () => {
+      $('#dooku').css('pointer-events', 'auto');
+      $('#anakin').css('pointer-events', 'none');
+      $('#obi').css('pointer-events', 'auto');
+
+      $('#lightsaber-dooku input').prop('checked', false);
+      $('#lightsaber-obi input').prop('checked', false);
+
       characterChange('anakin');
+      $('#lightsaber-dooku').css('visibility', 'hidden');
+      $('#lightsaber-anakin').css('visibility', 'visible');
+      $('#lightsaber-obi').css('visibility', 'hidden');
+      // もしチェックが入っていたら
+      if ($('#lightsaber-anakin input').prop('checked')) {
+        // チェックを外す
+        $('#lightsaber-anakin input').prop('checked', false);
+
+      // もしチェックが外れていたら
+      } else {
+        // チェックを入れる
+        $('#lightsaber-anakin input').prop('checked', true);
+      }
     });
     $('#obi').on('click', () => {
+      $('#dooku').css('pointer-events', 'auto');
+      $('#anakin').css('pointer-events', 'auto');
+      $('#obi').css('pointer-events', 'none');
+
+      $('#lightsaber-dooku input').prop('checked', false);
+      $('#lightsaber-anakin input').prop('checked', false);
+
       characterChange('obi');
+      $('#lightsaber-dooku').css('visibility', 'hidden');
+      $('#lightsaber-anakin').css('visibility', 'hidden');
+      $('#lightsaber-obi').css('visibility', 'visible');
+      $('#lightsaber-obi').css('visibility', 'visible');
+      // もしチェックが入っていたら
+      if ($('#lightsaber-obi input').prop('checked')) {
+        // チェックを外す
+        $('#lightsaber-obi input').prop('checked', false);
+
+      // もしチェックが外れていたら
+      } else {
+        // チェックを入れる
+        $('#lightsaber-obi input').prop('checked', true);
+      }
     });
 
 
