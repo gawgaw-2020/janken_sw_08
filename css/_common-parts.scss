@@ -51,7 +51,6 @@
     border-radius: 2em;
   }
 
-
   &--light-side {
     color: $color-light-side__text;
     background-color: $color-light-side__background;
@@ -84,6 +83,14 @@
     &:hover {
       background-color: rgba($color-droid__background, 0.4);
     }
+  }
+
+  &--disable {
+    pointer-events: none;
+    color: #ddd;
+    background-color: #444;
+    box-shadow: 1px -1px 3px 1px #ddd inset,
+    -1px 1px 3px 1px #ddd inset;
   }
 
 }

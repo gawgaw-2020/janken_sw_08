@@ -775,6 +775,14 @@ Version: 1.0
   background-color: rgba(62, 188, 226, 0.4);
 }
 
+.btn--disable {
+  pointer-events: none;
+  color: #ddd;
+  background-color: #444;
+  -webkit-box-shadow: 1px -1px 3px 1px #ddd inset, -1px 1px 3px 1px #ddd inset;
+          box-shadow: 1px -1px 3px 1px #ddd inset, -1px 1px 3px 1px #ddd inset;
+}
+
 .content-box {
   padding: 2em;
 }
