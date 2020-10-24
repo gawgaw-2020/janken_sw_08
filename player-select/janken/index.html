@@ -148,7 +148,7 @@
         if (randomNumber === 0) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
           $('#result').html('draw').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+          changeDrawImage()
         }
         if (randomNumber === 1) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
@@ -177,7 +177,7 @@
         if (randomNumber === 2) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
           $('#result').html('draw').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+          changeDrawImage()
         }
       }
 
