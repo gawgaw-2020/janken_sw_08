@@ -552,6 +552,7 @@ Version: 1.0
 
 /* Main Image Styles */
 .star-wars-intro .main-logo {
+  overflow: visible;
   height: auto;
   position: absolute;
   width: 2.6em;
@@ -1200,6 +1201,8 @@ nav ul li.yellow:hover {
 }
 
 .janken__enemy {
+  max-width: 300px;
+  margin: 0 auto;
   overflow: hidden;
   height: 180px;
 }
@@ -1210,8 +1213,9 @@ nav ul li.yellow:hover {
 }
 
 .janken__myself {
+  max-width: 450px;
   position: relative;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
 }
 
 .janken__myself button {

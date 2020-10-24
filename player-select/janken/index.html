@@ -2,7 +2,7 @@
 
     <section class="janken">
       <div class="section-inner">
-        <h1 class="janken__heading heading heading--level1">your opponent is ...</h1>
+        <h1 class="janken__heading heading heading--level1">janken</h1>
         <p id="js-janken__enemy" class="janken__enemy"><img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt=""></p>
         <p id="result" class="janken__text text">Lorem ipsum dolor sit amet.</p>
         <div  class="janken__myself">
@@ -78,6 +78,11 @@
       }, 200);
     }
 
+    function changeDrawImage() {
+      const randomDrawImageNumber = Math.floor(Math.random() * 5);
+      $('#js-janken__myself').html(`<img src="/janken_ogawa_08/image/draw-image${randomDrawImageNumber}.jpg" alt="">`);
+    }
+
 
     // 敵画像ホバー時に、回す処理を止める
     $('#js-janken__enemy').hover(
@@ -129,7 +134,7 @@
         if (randomNumber === 1) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
           $('#result').html('draw').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/bg_anihoshi.gif" alt="">');
+          changeDrawImage()
         }
         if (randomNumber === 2) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
