@@ -108,9 +108,6 @@
       // 画像を回す処理の停止とホバーの無効化
       clearInterval(intervalID);
       $('#js-janken__enemy').css('pointer-events', 'none').css('height', '130px');
-      // ボタンの変更
-      $('#battle').css('visibility' , 'hidden');
-      $('#more').css('visibility' , 'visible');
 
       // ランダムの数値を生成
       const randomNumber = Math.floor(Math.random() * 3);
@@ -183,6 +180,10 @@
           changeDrawImage()
         }
       }
+
+      // ボタンの変更
+      $('#battle').css('visibility' , 'hidden');
+      $('#more').css('visibility' , 'visible');
 
     });
 
