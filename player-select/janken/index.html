@@ -12,7 +12,7 @@
             </p>
           </div>
           <button id="battle" class="target battle btn btn--light-side btn--round">battle!!</button>
-          <button id="more" class="target more btn btn--light-side btn--round">more</button>
+          <button id="more" class="target more btn btn--light-side btn--round">restart</button>
         </div>
         <p id="dooku-obi" class="target content-box content-box--light-side">オビワンの型は、相手の攻撃を防ぐことから始まるため、変幻自在の太刀筋で防御をすり抜けるドゥークーのマカシの対処を不得手とします。劇中でもその能力を最大限に発揮することができず早々に負傷、または気絶によって戦闘不能となります。</p>
         <p id="dooku-anakin" class="target content-box content-box--light-side">ドゥークーの型は、緻密さを求めるためにパワー不足に陥りやすく、力強い斬撃には太刀筋を狂わされて不利となります。劇中はアナキンが徐々にシスの暗黒面に引き寄せられ、パワーアップした攻撃的な型の前に敗北します。</p>
@@ -62,6 +62,10 @@
     //ストレージの定義
     const storage = localStorage;
     console.log(storage.selected);
+
+    if (storage.selected === undefined) {
+      window.location.href = '/janken_ogawa_08/';
+    }
 
     // タイマーIDのグローバル宣言
     let intervalID;
