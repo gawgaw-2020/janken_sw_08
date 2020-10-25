@@ -74,6 +74,10 @@
     //ストレージの定義
     const storage = localStorage;
 
+    // 画像のプレリロード
+    $("<img>").attr("src", "/janken_ogawa_08/image/player-select_dooku_selected@2x.jpg" );
+    $("<img>").attr("src", "/janken_ogawa_08/image/player-select_obi_selected@2x.jpg" );
+
     // キャラクターを選んだ時の処理
     function characterChange(name) {
       // ストレージを初期化（削除）
