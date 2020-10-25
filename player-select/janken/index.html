@@ -14,6 +14,9 @@
           <button id="battle" class="target battle btn btn--light-side btn--round">battle!!</button>
           <button id="more" class="target more btn btn--light-side btn--round">more</button>
         </div>
+        <p id="dooku-obi" class="target content-box content-box--light-side">オビワンの型は、相手の攻撃を防ぐことから始まるため、変幻自在の太刀筋で防御をすり抜けるドゥークーのマカシの対処を不得手とします。劇中でもその能力を最大限に発揮することができず早々に負傷、または気絶によって戦闘不能となります。</p>
+        <p id="dooku-anakin" class="target content-box content-box--light-side">ドゥークーの型は、緻密さを求めるためにパワー不足に陥りやすく、力強い斬撃には太刀筋を狂わされて不利となります。劇中はアナキンが徐々にシスの暗黒面に引き寄せられ、パワーアップした攻撃的な型の前に敗北します。</p>
+        <p id="anakin-obi" class="target content-box content-box--light-side">アナキンとオビワンの型はお互いの長所を潰すため、泥沼の長期戦となります。純粋な「強さ」はアナキンの方が上かもしれませんが、結果としてオビワンが勝利したのは「型」の影響も少なからずありそうです。</p>
         <div class="janken__btns">
           <a href="/janken_ogawa_08/player-select/" class="target btn btn--light-side">player select</a>
           <a href="/janken_ogawa_08/" class="target btn btn--light-side">home</a>
@@ -88,12 +91,16 @@
     function changeButtonColorDark() {
       $('.target').removeClass('btn--light-side');
       $('.target').addClass('btn--dark-side');
+      $('.target').removeClass('content-box--light-side');
+      $('.target').addClass('content-box--dark-side');
     };
 
     // 黄色ボタンを青ボタンに変える処理
     function changeButtonColorDroid() {
       $('.target').removeClass('btn--light-side');
       $('.target').addClass('btn--droid');
+      $('.target').removeClass('content-box--light-side');
+      $('.target').addClass('content-box--droid');
     };
 
     // 敵画像ホバー時に、回す処理を止める
@@ -139,6 +146,7 @@
       // アナキンを選んでいた時の処理
       if (selectedCharacter === 'anakin') {
         if (randomNumber === 0) {
+          $('#dooku-anakin').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
           $('#result').html('you win').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
@@ -150,6 +158,7 @@
           changeDrawImage()
         }
         if (randomNumber === 2) {
+          $('#anakin-obi').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
           $('#result').html('you lose').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
@@ -165,12 +174,14 @@
           changeDrawImage()
         }
         if (randomNumber === 1) {
+          $('#dooku-anakin').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
           $('#result').html('you lose').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
           changeButtonColorDark();
         }
         if (randomNumber === 2) {
+          $('#dooku-obi').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
           $('#result').html('you win').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
@@ -181,12 +192,14 @@
       // オビワンを選んでいた時の処理
       if (selectedCharacter === 'obi') {
         if (randomNumber === 0) {
+          $('#dooku-obi').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
           $('#result').html('you lose').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
           changeButtonColorDark();
         }
         if (randomNumber === 1) {
+          $('#anakin-obi').css('display', 'block');
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
           $('#result').html('you win').addClass('text--jedi');
           $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');

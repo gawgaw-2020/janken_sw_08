@@ -119,6 +119,20 @@
       visibility: hidden;
     }
   }
+  .content-box {
+    font-size: 1.6rem;
+    max-width: 450px;
+    margin: 0 auto 24px;
+  }
+  #dooku-obi {
+    display: none;
+  }
+  #dooku-anakin {
+    display: none;
+  }
+  #anakin-obi {
+    display: none;
+  }
   &__btns {
     max-width: 450px;
     margin: 0 auto;

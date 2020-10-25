@@ -1269,6 +1269,24 @@ nav ul li.yellow:hover {
   visibility: hidden;
 }
 
+.janken .content-box {
+  font-size: 1.6rem;
+  max-width: 450px;
+  margin: 0 auto 24px;
+}
+
+.janken #dooku-obi {
+  display: none;
+}
+
+.janken #dooku-anakin {
+  display: none;
+}
+
+.janken #anakin-obi {
+  display: none;
+}
+
 .janken__btns {
   max-width: 450px;
   margin: 0 auto;
