@@ -1130,6 +1130,14 @@ nav ul li.yellow:hover {
   padding: 40px 0;
 }
 
+.first-view-nav .section-inner {
+  text-align: center;
+}
+
+.first-view-nav .section-inner a {
+  max-width: 450px;
+}
+
 .player-select__heading {
   padding: 24px 0;
 }
@@ -1199,6 +1207,27 @@ nav ul li.yellow:hover {
           justify-content: center;
 }
 
+.player-select .player-list__character {
+  opacity: 0.5;
+}
+
+.player-select .player-list #dooku.active {
+  opacity: 1;
+}
+
+.player-select .player-list #anakin.active {
+  opacity: 1;
+}
+
+.player-select .player-list #obi.active {
+  opacity: 1;
+}
+
+.player-select__btns {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .player-select__btns a {
   margin-bottom: 20px;
 }
@@ -1211,7 +1240,7 @@ nav ul li.yellow:hover {
   max-width: 300px;
   margin: 0 auto;
   overflow: hidden;
-  height: 180px;
+  height: 150px;
 }
 
 .janken__text {
@@ -1220,7 +1249,8 @@ nav ul li.yellow:hover {
 }
 
 .janken__myself {
-  max-width: 450px;
+  max-width: 300px;
+  height: 300px;
   position: relative;
   margin: 0 auto 16px;
 }
@@ -1228,7 +1258,7 @@ nav ul li.yellow:hover {
 .janken__myself button {
   width: 80%;
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1237,6 +1267,11 @@ nav ul li.yellow:hover {
 
 .janken__myself .more {
   visibility: hidden;
+}
+
+.janken__btns {
+  max-width: 450px;
+  margin: 0 auto;
 }
 
 .janken__btns a {

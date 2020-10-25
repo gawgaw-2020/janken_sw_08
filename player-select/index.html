@@ -4,7 +4,7 @@
     <section class="player-select">
       <div class="section-inner">
         <h1 class="player-select__heading heading heading--level1">player select</h1>
-        <div id="selected-picture" class="player-select__selected-picture">
+        <div id="selected-picture" class="player-select__selected-picture active">
           <img src="/janken_ogawa_08/image/player-select_anakin_selected@2x.jpg" alt="" width="329" height="394">
           <div id="lightsaber-dooku" class="lightsaber">
             <label for="vader-example"></label>
@@ -27,7 +27,7 @@
         </div>
         <ul class="player-select__player-list player-list">
           <li id="dooku" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_dooku@2x.jpg" alt=""></li>
-          <li id="anakin" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
+          <li id="anakin" class="player-list__character active"><img src="/janken_ogawa_08/image/player-select_anakin@2x.jpg" alt=""></li>
           <li id="obi" class="player-list__character"><img src="/janken_ogawa_08/image/player-select_obi@2x.jpg" alt=""></li>
         </ul>
         <div class="player-select__btns">
@@ -88,6 +88,10 @@
     $('#dooku').on('click', () => {
       $('.btn--disable').removeClass('btn--disable');
 
+      $('#dooku').addClass('active');
+      $('#anakin').removeClass('active');
+      $('#obi').removeClass('active');
+
       $('#dooku').css('pointer-events', 'none');
       $('#anakin').css('pointer-events', 'auto');
       $('#obi').css('pointer-events', 'auto');
@@ -113,6 +117,10 @@
     $('#anakin').on('click', () => {
       $('.btn--disable').removeClass('btn--disable');
 
+      $('#dooku').removeClass('active');
+      $('#anakin').addClass('active');
+      $('#obi').removeClass('active');
+
       $('#dooku').css('pointer-events', 'auto');
       $('#anakin').css('pointer-events', 'none');
       $('#obi').css('pointer-events', 'auto');
@@ -137,6 +145,10 @@
     });
     $('#obi').on('click', () => {
       $('.btn--disable').removeClass('btn--disable');
+
+      $('#dooku').removeClass('active');
+      $('#anakin').removeClass('active');
+      $('#obi').addClass('active');
 
       $('#dooku').css('pointer-events', 'auto');
       $('#anakin').css('pointer-events', 'auto');
