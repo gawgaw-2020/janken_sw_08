@@ -115,22 +115,22 @@
       // アナキンを選んでいた時の処理
       if (selectedCharacter === 'anakin') {
         if (randomNumber === 0) {
-          $('#dooku-anakin').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
-          $('#result').html('you win').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
+          $('#dooku-anakin').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
           changeButtonColorDroid();
         }
         if (randomNumber === 1) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
-          $('#result').html('draw').addClass('text--jedi');
+          $('#result').html('draw').addClass('text--jedi animated flipInX');
           changeDrawImage()
         }
         if (randomNumber === 2) {
-          $('#anakin-obi').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
-          $('#result').html('you lose').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
+          $('#anakin-obi').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
           changeButtonColorDark();
         }
       }
@@ -139,21 +139,21 @@
       if (selectedCharacter === 'dooku') {
         if (randomNumber === 0) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
-          $('#result').html('draw').addClass('text--jedi');
+          $('#result').html('draw').addClass('text--jedi animated flipInX');
           changeDrawImage()
         }
         if (randomNumber === 1) {
-          $('#dooku-anakin').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
-          $('#result').html('you lose').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
+          $('#dooku-anakin').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/dooku-anakin@2x.jpg" alt="">');
           changeButtonColorDark();
         }
         if (randomNumber === 2) {
-          $('#dooku-obi').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
-          $('#result').html('you win').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
+          $('#dooku-obi').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
           changeButtonColorDroid();
         }
       }
@@ -161,22 +161,22 @@
       // オビワンを選んでいた時の処理
       if (selectedCharacter === 'obi') {
         if (randomNumber === 0) {
-          $('#dooku-obi').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
-          $('#result').html('you lose').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
+          $('#dooku-obi').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_1@2x.jpg" alt="">`);
+          $('#result').html('you lose').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/obi-dooku@2x.jpg" alt="">');
           changeButtonColorDark();
         }
         if (randomNumber === 1) {
-          $('#anakin-obi').css('display', 'block');
-          $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
-          $('#result').html('you win').addClass('text--jedi');
-          $('#js-janken__myself').html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
+          $('#anakin-obi').fadeIn();
+          $('#js-janken__enemy').hide().fadeIn().html(`<img src="/janken_ogawa_08/image/random-select_2@2x.jpg" alt="">`);
+          $('#result').html('you win').addClass('text--jedi animated flipInX');
+          $('#js-janken__myself').hide().fadeIn().html('<img src="/janken_ogawa_08/image/Anakin-obi@2x.jpg" alt="">');
           changeButtonColorDroid();
         }
         if (randomNumber === 2) {
           $('#js-janken__enemy').html(`<img src="/janken_ogawa_08/image/random-select_3@2x.jpg" alt="">`);
-          $('#result').html('draw').addClass('text--jedi');
+          $('#result').html('draw').addClass('text--jedi animated flipInX');
           changeDrawImage()
         }
       }
