@@ -453,13 +453,11 @@ Version: 1.0
 }
 
 .star-wars-intro {
-  background: url("/janken_ogawa_08/image/bg_anihoshi.gif") center center;
   width: 100%;
   height: 500px;
   font-family: "Droid Sans", arial, verdana, sans-serif;
   font-weight: 700;
   color: #EBD71C;
-  background-color: #000;
   overflow: hidden;
   position: relative;
 }
